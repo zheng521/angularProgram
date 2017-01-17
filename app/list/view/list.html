@@ -1,0 +1,41 @@
+<div class="topics-main">
+  <div class="top-bar">
+    <div class="top-bar-item {{list.allActive}}" id="all" ng-click="list.onTapTag('all')">全部</div>
+    <div class="top-bar-item {{list.goodActive}}" id="good" ng-click="list.onTapTag('good')">精华</div>
+    <div class="top-bar-item {{list.shareActive}}" id="share" ng-click="list.onTapTag('share')">分享</div>
+    <div class="top-bar-item {{list.askActive}}" id="ask" ng-click="list.onTapTag('ask')">问答</div>
+    <div class="top-bar-item {{list.jobActive}}" id="job" ng-click="list.onTapTag('job')">招聘</div>
+  </div>
+  <div class="posts-list">
+    <div class="posts-item" ng-repeat="item in list.items" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
+      <a href="../#/topic/{{item.id}}">
+        <div class="author">
+          <image class="author-avatar" src="{{item.author.avatar_url}}"></image>
+          <div class="author-name">{{item.author.loginname}}</div>
+          <div ng-show="{{item.top}}">
+            <div class="posts-tag hot">置顶</div>
+          </div>
+          <div ng-show="{{item.good}}">
+            <div class="posts-tag">精华</div>
+          </div>
+          <!-- <div class="posts-tag" ng-if="{{item.good}}">精华</div> -->
+          <div class="posts-last-reply">{{item.last_reply_at}}</div>
+        </div>
+        <div class="posts-title">{{item.title}}</div>
+        <div class="bar-info">
+          <div class="bar-info-item">
+            <image class="bar-info-item-icon" src="./list/assets/reply.png"></image>
+            <div class="bar-info-item-number">{{item.reply_count}}</div>
+          </div>
+          <div class="bar-info-item">
+            <image class="bar-info-item-icon" src="../list/assets/visit.png"></image>
+            <div class="bar-info-item-number">{{item.visit_count}}</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- <loading hidden="{{hidden}}">
+    加载中...
+  </loading> -->
+</div>

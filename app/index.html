@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="zbjApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>ZBJAPP</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/angular-carousel/dist/angular-carousel.css" type="text/css" />
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+  <body>
+    <script>
+      function rem () {
+        document.documentElement.style.fontSize = (document.documentElement.clientWidth) / 3.75 + 'px'; 
+      }
+      rem();
+      window.onresize = function(){ rem(); }
+    </script>
+    <div ui-view></div>
+    <script src="bundle.js"></script>
+  </body>
+</html>

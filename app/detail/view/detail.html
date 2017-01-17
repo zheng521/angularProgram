@@ -1,0 +1,40 @@
+<div class="detail-main">
+  <div class="detail-post">
+    <div class="detail-post-header">
+      <div class="detail-post-title">{{ detail.info.title }}</div>
+    </div>
+    <div class="detail-post-meta">
+      <div class="detail-post-avatar">
+        <image class="detail-post-avatar-img" mode="scaleToFill" src="{{ detail.info.author.avatar_url }}"></image>
+      </div>
+      <div class="detail-post-info">
+        <div class="detail-post-author-name">{{ detail.info.author.loginname }}</div>
+        <div class="detail-post-time">楼主 发表于{{ detail.info.create_at }}</div>
+      </div>
+    </div>
+    <div class="detail-post-content">
+      <text class="content-info">{{ detail.info.content }}</text>
+    </div>
+    <div class="detail-post-comment">
+      <div class="detail-post-comment-title">评论</div>
+      <div class="detail-post-comment-list">
+        <div class="detail-post-comment-item" ng-repeat="item in detail.info.replies" index="{{index}}" id="{{item.id}}">
+          <div class="detail-post-comment-avatar">
+            <image class="detail-post-comment-avatar-img" mode="scaleToFill" src="{{ item.author.avatar_url }}"></image>
+          </div>
+          <div class="detail-post-comment-info">
+            <div class="detail-post-comment-author-name">{{ item.author.loginname }}</div>
+          </div>
+          <div class="detail-comment-content">
+            <text class="detail-comment-text">{{ item.content }}</text>
+            <div class="detail-post-comment-time">{{index + 2}}楼 发表于{{ item.create_at }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <loading hidden="{{hidden}}">
+    加载中...
+  </loading> -->
+</div>
